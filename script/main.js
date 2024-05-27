@@ -68,12 +68,14 @@ const showData = (data) => {
   }
 
   container_proyect.innerHTML = "";
-  data.projects.forEach((project,index) => {
-    const oddOrEven = index % 2 === 0 ? 'even' : 'odd';
+  data.projects.forEach((project, index) => {
+    const oddOrEven = index % 2 === 0 ? "even" : "odd";
     container_proyect.innerHTML += `
           <div class="container_card_proyect ${oddOrEven}">
             <div class="img_effect_proyect">
-                <img src="${project.picture}" alt="${project.title}" title="${project.title}">
+                <img src="${project.picture}" alt="${project.title}" title="${
+      project.title
+    }">
             </div>
 
             <div class="description_card_proyect">
@@ -100,13 +102,13 @@ const showData = (data) => {
 
 // Botón to-top
 
-window.addEventListener('scroll', function() {
-  var btnToTop = document.getElementById('btn-to-top');
+window.addEventListener("scroll", function () {
+  let btnToTop = document.getElementById("btn-to-top");
 
   if (window.scrollY > 0) {
-      btnToTop.style.display = 'flex'; 
+    console.log("NO BUTTON");
+    btnToTop.style.display = "flex";
   } else {
-      btnToTop.style.display = 'none'; 
+    btnToTop.style.display = "none";
   }
 });
-
