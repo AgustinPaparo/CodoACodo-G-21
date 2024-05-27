@@ -268,7 +268,7 @@ header {
 
 /*SECTION 2 - ACTIVIDADES DESTACADAS */
 
-#experiencia .container_description_section ul {
+#Actividades .container_description_section ul {
     width: 100%;
     list-style: none;
     display: flex;
@@ -276,7 +276,7 @@ header {
     justify-content: space-between;
 }
 
-#experiencia ul .card {
+#Actividades ul .card {
     display: flex;
     flex-direction: column;
     height: 300px;
@@ -290,12 +290,12 @@ header {
     box-shadow: 0 5px 15px 0px var(--color-1);
 }
 
-#experiencia ul .card:hover {
+#Actividades ul .card:hover {
     background-color: white;
     cursor: pointer;
 }
 
-#experiencia ul .card img {
+#Actividades ul .card img {
     height: 60%;
     object-fit: cover;
 }
@@ -469,6 +469,23 @@ header {
     box-shadow: 0 5px 10px 0px var(--color-2);
 }
 
+.container_form form .row .file-upload {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.container_form form .row .file-upload input{
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    width: auto;
+}
+
+.container_form form .row .select-e select{
+    width: 100px;
+}
+
 .container_form form .row .check {
     display: flex;
     align-items: center;
@@ -524,6 +541,12 @@ footer .columna_izquierda {
 footer .columna_izquierda h2 {
     margin: 10px 0 10px 0;
     color: var(--text-color-1);
+}
+
+footer .columna_izquierda iframe {
+    width: 90%;
+    height: 100%;
+    border: 0;
 }
 
 footer .columna_derecha {

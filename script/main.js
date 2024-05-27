@@ -73,9 +73,7 @@ const showData = (data) => {
     container_proyect.innerHTML += `
           <div class="container_card_proyect ${oddOrEven}">
             <div class="img_effect_proyect">
-                <img src="${project.picture}" alt="${project.title}" title="${
-      project.title
-    }">
+                <img src="${project.picture}" alt="${project.title}" title="${project.title}">
             </div>
 
             <div class="description_card_proyect">

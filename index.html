@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to CSS -->
 	<link rel="stylesheet" href="styles/style.css">
-	<!-- <link rel="stylesheet" href="styles/media_querys.css"> -->
+	<link rel="stylesheet" href="styles/media_querys.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -13,13 +13,12 @@
 </head>
 
 <body>
-
     <nav class="navbar">
         <div class="container_navegation">
             <nav class="menu">
                 <ul>
-                    <li><a href="#Inicio" class="item_menu_link">Nosotros</a></li>
-                    <li><a href="#experiencia" class="item_menu_link">Actividades</a></li>
+                    <li><a href="#AboutUs" class="item_menu_link">Nosotros</a></li>
+                    <li><a href="#Actividades" class="item_menu_link">Actividades</a></li>
                     <li><a href="#trabajos" class="item_menu_link">Destacados</a></li>
                     <li><a href="#contacto" class="item_menu_link">Contacto</a></li>
                 </ul>
@@ -40,13 +39,15 @@
     </nav>
 
     <main>
+        <!-- BANNER INICIO -->
         <header>
                     <p class="greeting">Bienvenidos</p>
                     <h1 class="name_school">Colegio Secundario Tercer Milenio</h1>
                     <p class="description_school">El Colegio Secundario del Tercer Milenio fue creado con el objetivo de generar nuevas vocaciones a través del pensamiento en relación a las nuevas tecnologías.</p>
         </header>
 
-        <section class="container_section" id="Inicio">
+        <!-- SECCION NOSOTROS -->
+        <section class="container_section" id="AboutUs">
                 <div class="container_title_section">
                     <h2 class="text_title_section">
                     NOSOTROS
@@ -66,7 +67,8 @@
                 </div>
         </section>
 
-        <section class="container_section" id="experiencia">
+        <!-- SECCION DESTACADAS -->
+        <section class="container_section" id="Actividades">
                 <div class="container_title_section">
                     <h2 class="text_title_section">
                         ACTIVIDADES DESTACADAS
@@ -87,6 +89,7 @@
                 </div>
         </section>
 
+        <!-- SECCION TRABAJOS ALUMNOS -->
         <section class="container_section" id="trabajos">
             <div class="container_title_section">
                 <h2 class="text_title_section">
@@ -118,6 +121,7 @@
             </div>
         </section>
 
+        <!-- SECCION CONTACTO -->
         <section class="container_section" id="contacto">
             <div class="container_title_section">
                 <h2 class="text_title_section">
@@ -126,15 +130,15 @@
             </div>
 
             <div class="container_form">
-                <form action="">
+                <form>
                     <div class="row">
                         <div class="nombre">
-                            <label for="name"> Nombre:</label>
+                            <label for="firstName"> Nombre:</label>
                             <input type="text" id="firstName" name="firstName" required>
                         </div>                        
 
                         <div class="apellido">
-                            <label for="name"> Apellido:</label>
+                            <label for="lastName"> Apellido:</label>
                             <input type="text" id="lastName" name="lastName" required>
                         </div>
 
@@ -145,8 +149,27 @@
                     </div>
                     
                     <div class="row">                        
+                        <div class="file-upload">
+                            <label for="imageUpload">Foto ingesante:</label>
+                            <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                        </div>
+
                         <div class="select">
-                            <label for="edad">Edad del chico:</label>
+                            <label for="nationality">Nacionalidad:</label>
+                            <select name="nationality" id="nationality">
+                                <option value="ARG">
+                                    ARGENTINA
+                                </option>
+                                <option value="OTHER">
+                                    EXTRANJERA
+                                </option>
+                            </select>
+                        </div>                        
+                    </div>        
+                    
+                    <div class="row">
+                        <div class="select-e">
+                            <label for="edad">Edad ingresante:</label>
                             <select name="nationality" id="edad">
                                 <option value="11">
                                     11 años
@@ -175,25 +198,6 @@
                             </select>
                         </div> 
 
-                        <div class="select">
-                            <label for="nationality">Nacionalidad:</label>
-                            <select name="nationality" id="nationality">
-                                <option value="ARG">
-                                    ARGENTINA
-                                </option>
-                                <option value="OTHER">
-                                    EXTRANJERA
-                                </option>
-                            </select>
-                        </div>                        
-                    </div>        
-                    
-                    <div class="row">
-                        <div class="check">
-                            <label for="notif">Deseo recibir novedades.</label>
-                            <input type="checkbox" id="notif">
-                        </div>
-                        
                         <div class="check">
                             <label for="agree">Estoy de acuerdo con las Politicas de privacidad.</label>
                             <input type="checkbox" id="agree" required>
@@ -210,8 +214,9 @@
         <div class="container_footer">
             <div class="columna_izquierda">
                 <h2>Donde encontrarnos:</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.5619170428404!2d-58.048801923492924!3d-34.86723347146411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2de64bb856afd%3A0xfe7fbe11a273bc89!2sColegio%20Tercer%20Milenio%20Nivel%20Secundario!5e0!3m2!1ses-419!2sar!4v1716839981807!5m2!1ses-419!2sar" width="90%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.5619170428404!2d-58.048801923492924!3d-34.86723347146411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2de64bb856afd%3A0xfe7fbe11a273bc89!2sColegio%20Tercer%20Milenio%20Nivel%20Secundario!5e0!3m2!1ses-419!2sar!4v1716839981807!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+
             <div class="columna_derecha">
                 <div class="fila">
                     <div class="fila1"></div>

@@ -1,7 +1,7 @@
 /* media querys*/
 @media screen and (max-width: 1200px){
-
-	#main{
+	main{
+		background-color: blue;
 		padding: 0px 150px;
 		}
 
@@ -11,7 +11,8 @@
 }
 
 @media screen and (max-width: 992px){
-	#main{
+	main{
+		background-color: aqua;
 		padding: 0px 100px;
 		}
 	
