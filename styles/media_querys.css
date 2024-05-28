@@ -329,7 +329,9 @@
 		flex-direction: row;
 	}
 
-	.container_card_proyect.odd,
+	.container_card_proyect.odd{
+		flex-direction: row-reverse;
+	}
 	.container_card_proyect.even {
 		flex-direction: row;
 	}
