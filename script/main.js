@@ -69,7 +69,7 @@ const showData = (data) => {
 
   container_proyect.innerHTML = "";
   data.projects.forEach((project, index) => {
-    const oddOrEven = index % 2 === 0 ? "even" : "odd";
+    const oddOrEven = index % 2 === 0 ? "even" : "odd"; // Resto de index/2 = 0 ?
     container_proyect.innerHTML += `
           <div class="container_card_proyect ${oddOrEven}">
             <div class="img_effect_proyect">
@@ -85,7 +85,7 @@ const showData = (data) => {
                 <div class="container_languages_programing">
                     <ul>
                         ${project.lenguajes
-                          .map((lang) => `<li>#${lang}</li>`)
+                          .map((tecnology) => `<li>#${tecnology}</li>`)
                           .join("")}
                     </ul>
                 </div>
