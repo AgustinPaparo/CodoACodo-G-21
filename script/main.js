@@ -113,45 +113,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-/*
-// validacion formulario datos
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        // Borrar
-        document.getElementById('firstNameError').textContent = '';
-        document.getElementById('lastNameError').textContent = '';
-        document.getElementById('emailError').textContent = '';
-
-        let valid = true;
-
-        // Valida nombre
-        const nombre = document.getElementById('firstName').value.trim();
-        if (nombre === '' || !/^[a-zA-Z\s]+$/.test(nombre)) {
-            document.getElementById('firstNameError').textContent = 'Por favor, ingrese un nombre válido.';
-            valid = false;
-        }
-
-        // Validate apellido
-        const apellido = document.getElementById('lastName').value.trim();
-        if (apellido === '' || !/^[a-zA-Z\s]+$/.test(apellido)) {
-            document.getElementById('lastNameError').textContent = 'Por favor, ingrese un apellido válido.';
-            valid = false;
-        }
-
-        // Validate email
-        const email = document.getElementById('email').value.trim();
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email === '' || !emailPattern.test(email)) {
-            document.getElementById('emailError').textContent = 'Por favor, ingrese un email válido.';
-            valid = false;
-        }
-
-        // If not valid, prevent form submission
-        if (!valid) {
-            event.preventDefault();
-        }
-    });
-*/
-
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
   form.addEventListener("submit", function (event) {
