@@ -110,6 +110,7 @@ window.addEventListener("scroll", function () {
     btnToTop.style.display = "none";
   }
 });
+
 // validacion formulario datos
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         // Borrar
