@@ -112,18 +112,36 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// VALIDACION Y CONTROL DEL FORM
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Evitar el envío del formulario para validar
     if (validateForm()) {
+      // Capturar los datos del formulario
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      // Convertir los datos a formato JSON
+      const jsonData = JSON.stringify(data);
+
+      // Mostrar los datos en la consola
+      console.log(jsonData);
+
       // Mostrar mensaje de éxito
       Swal.fire({
         title: "¡Éxito!",
         text: "El formulario ha sido enviado correctamente.",
         icon: "success",
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500
       }).then(() => {
-        form.submit(); // Enviar el formulario si es válido
+        form.reset(); // Reiniciar el formulario después de la confirmación
       });
     }
   });
@@ -170,7 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
       Swal.fire({
         title: "Errores en el formulario",
         html: errorMessage,
-        icon: "error",
+        icon: "warning",
+        confirmButtonColor: "#eb233c",
       });
     }
 
@@ -183,3 +202,5 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
 });
+
+
