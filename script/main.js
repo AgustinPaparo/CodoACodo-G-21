@@ -73,7 +73,9 @@ const showData = (data) => {
     container_proyect.innerHTML += `
           <div class="container_card_proyect ${oddOrEven}">
             <div class="img_effect_proyect">
-                <img src="${project.picture}" alt="${project.title}" title="${project.title}">
+                <img src="${project.picture}" alt="${project.title}" title="${
+      project.title
+    }">
             </div>
 
             <div class="description_card_proyect">
@@ -104,13 +106,13 @@ window.addEventListener("scroll", function () {
   let btnToTop = document.getElementById("btn-to-top");
 
   if (window.scrollY > 0) {
-    console.log("NO BUTTON");
     btnToTop.style.display = "flex";
   } else {
     btnToTop.style.display = "none";
   }
 });
 
+/*
 // validacion formulario datos
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         // Borrar
@@ -147,3 +149,93 @@ window.addEventListener("scroll", function () {
             event.preventDefault();
         }
     });
+*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar el envío del formulario para validar
+    if (validateForm()) {
+      // Capturar los datos del formulario
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      // Convertir los datos a formato JSON
+      const jsonData = JSON.stringify(data);
+
+      // Mostrar los datos en la consola
+      console.log(jsonData);
+
+      // Mostrar mensaje de éxito
+      Swal.fire({
+        title: "¡Éxito!",
+        text: "El formulario ha sido enviado correctamente.",
+        icon: "success",
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        form.reset(); // Reiniciar el formulario después de la confirmación
+      });
+    }
+  });
+
+  function validateForm() {
+    // Obtener los valores de los campos
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const agree = document.getElementById("agree").checked;
+
+    let isValid = true;
+    let errorMessage = "";
+
+    // Validar campo Nombre
+    if (firstName === "") {
+      errorMessage += "El nombre es obligatorio.<br>";
+      isValid = false;
+    }
+
+    // Validar campo Apellido
+    if (lastName === "") {
+      errorMessage += "El apellido es obligatorio.<br>";
+      isValid = false;
+    }
+
+    // Validar campo Email
+    if (email === "") {
+      errorMessage += "El email es obligatorio.<br>";
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      errorMessage += "El email no es válido.<br>";
+      isValid = false;
+    }
+
+    // Validar que se haya aceptado las políticas de privacidad
+    if (!agree) {
+      errorMessage += "Debe aceptar las políticas de privacidad.<br>";
+      isValid = false;
+    }
+
+    // Mostrar mensaje de error si hay campos inválidos
+    if (!isValid) {
+      Swal.fire({
+        title: "Errores en el formulario",
+        html: errorMessage,
+        icon: "warning",
+        confirmButtonColor: "#eb233c",
+      });
+    }
+
+    return isValid;
+  }
+
+  function validateEmail(email) {
+    // Expresión regular para validar email
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(String(email).toLowerCase());
+  }
+});
