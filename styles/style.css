@@ -275,7 +275,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap:25px
+    gap: 25px
 }
 
 #Actividades ul .card {
@@ -464,8 +464,7 @@ header {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-content: end
-    ;
+    align-content: end;
 }
 
 .container_form form .row select {
@@ -483,7 +482,7 @@ header {
 .container_form form .row .apellido,
 .container_form form .row .email,
 .container_form form .row .select-e,
-.container_form form .row .check{
+.container_form form .row .check {
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -492,18 +491,18 @@ header {
     gap: 5px;
 }
 
-.container_form form .row .file-upload input{
+.container_form form .row .file-upload input {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 400;
     font-size: medium;
     width: auto;
 }
 
-.container_form form .row .select-e{
+.container_form form .row .select-e {
     width: 150px;
 }
 
-.container_form form .row .select-e select{
+.container_form form .row .select-e select {
     width: 100px;
 }
 

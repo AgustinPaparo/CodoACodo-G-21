@@ -6,7 +6,7 @@ const body = document.body;
 let posActual = 0;
 let status_button = true;
 
-/* EVENTOS */
+/* EVENTOS Navbar responsive*/
 
 boton_menu.addEventListener("click", function () {
   container_navegation.classList.toggle("active_button_menu");
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon: "success",
         position: "top-end",
         showConfirmButton: false,
-        timer: 1500
+        timer: 1500,
       }).then(() => {
         form.reset(); // Reiniciar el formulario después de la confirmación
       });
@@ -202,5 +202,3 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
 });
-
-
