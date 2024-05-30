@@ -46,7 +46,7 @@ window.addEventListener("scroll", function () {
 
 /* GET a mi db.. */
 
-const db = "/db.json";
+const db = "https://agustinpaparo.github.io/CodoACodo-G-21/db.json";
 fetch(db)
   .then((response) => response.json())
   .then((data) => showData(data))
